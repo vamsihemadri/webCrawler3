@@ -22,7 +22,7 @@ public class Main {
     private static List<String> crawl(String url,HtmlParser htmlParser){
 
 
-        CustomExecutor service = new CustomExecutorImpl(30,100000);
+        CustomExecutor service = new CustomExecutorImpl(3,5);
 
         String domain = url.split("/")[2];
 
@@ -33,8 +33,8 @@ public class Main {
         service.execute(new SingleThreadCrawlerTask(url,htmlParser,domain,visitedSet,service,numCurrentRunningTasks));
 
         while(numCurrentRunningTasks.get()>0){
-
         }
+
         //service.shutDownNow();
 
         return new ArrayList<>(visitedSet);

@@ -32,6 +32,7 @@ public class CustomExecutorImpl implements CustomExecutor {
         if(isStoppped){
             throw new IllegalStateException(" Thread pool stopped ");
         }
+
         this.taskQueue.offer(command);
 
     }
@@ -43,17 +44,4 @@ public class CustomExecutorImpl implements CustomExecutor {
             runnable.stop();
         }
     }
-
-    @Override
-    public synchronized void waitUntilAlltasksFinished() {
-        while (this.taskQueue.size()>0){
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-
 }

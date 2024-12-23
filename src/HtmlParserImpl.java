@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class HtmlParserImpl implements HtmlParser {
 
-    private static final  int MAX = 1000;
+    private static final  int MAX = 10;
     private static  final int MIN  =  1;
     private static final String base = "http://vamsi.com/home/";
 
@@ -20,6 +20,7 @@ public class HtmlParserImpl implements HtmlParser {
 
         int num1 = random.nextInt(MAX-MIN+1) + MIN;
         int num2 = random.nextInt(MAX-MIN+1) + MIN;
+
 
 
         return List.of(base + String.valueOf(num1) , base + String.valueOf(num2));

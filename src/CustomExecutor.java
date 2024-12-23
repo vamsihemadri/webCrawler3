@@ -4,5 +4,4 @@ public interface CustomExecutor {
 
     void shutDownNow();
 
-    void waitUntilAlltasksFinished();
 }
